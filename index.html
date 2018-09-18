@@ -25,7 +25,9 @@
 <body>
   <iframe id="iframe" frameborder="0"></iframe>
 <script>
-document.getElementById('iframe').src = window.location.hash.substr(1);
+var setLoc = () => document.getElementById('iframe').src = window.location.hash.substr(1);
+window.addEventListener("hashchange", setLoc, false);
+setLoc();
 </script>
 </body>
 </html>
